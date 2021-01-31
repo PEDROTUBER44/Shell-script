@@ -1,0 +1,25 @@
+echo $PATH ;
+export PATH=$PATH:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin ;
+echo "deb http://deb.debian.org/debian/ jessie main" > /etc/apt/sources.list.d/epson.list ;
+sudo apt-get install multiarch-support -y ;
+sudo dpkg -i Instaladores/libpng12.deb ;
+sudo apt-get install -f ;
+sudo apt-mark hold libpng12-0 ;
+sudo apt update ;
+sudo apt upgrade -y ;
+sudo apt install dpkg -y --no-install-recommends ;
+sudo apt-get install lsb -y ;
+sudo dpkg -i Instaladores/epson-utility.deb ;
+sudo apt-get install -f -y ;
+sudo apt update ;
+sudo apt upgrade -y ;
+sudo dpkg -i Instaladores/epson-escpr.deb ;
+sudo apt-get install -f -y ;
+sudo apt update ;
+sudo apt upgrade -y ;
+sudo ./Instaladores/install.sh ;
+sudo apt-get install -f -y ;
+sudo apt update ;
+sudo apt upgrade -y ;
+
+echo "driverSimpressoraepsonL3150" ;
